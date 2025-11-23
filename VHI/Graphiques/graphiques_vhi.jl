@@ -83,11 +83,7 @@ begin
 
         xlabel = "Mois",
         xticks = (1:12, ["$i" for i in 1:12]),
-        #xminorticks = 1:1:41,
-        xminorticksvisible = true,
-        xminorgridvisible = true,
         xtickalign = 1, 
-        xminortickalign = 1,
         xticksmirrored = true,
         xticklabelpad = 10,
 
