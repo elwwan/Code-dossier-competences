@@ -2,7 +2,7 @@ using CSV, DataFrames, CairoMakie, ColorSchemes
 
 # VHI Aout MDL 1984-2024.
 begin
-    df = DataFrame(CSV.File("data_mdl.csv"))
+    df = DataFrame(CSV.File("data/data_mdl.csv"))
     m = reshape(df[:, :shares], 9, :)
     data = cumsum( vcat( fill(0, (1, 41)) , m[:, 8:12:end] ), dims=1)
     classes = [
@@ -57,7 +57,7 @@ end
 
 # VHI de la commune de Givors en 2024.
 begin
-    df = DataFrame(CSV.File("data_by_municipality_with_names.csv"))
+    df = DataFrame(CSV.File("data/data_by_municipality.csv"))
     df = sort(df, [:name, :year, :month,:categorie])
     df = df[df.name .== "Givors", :]
     m = reshape(df[:, :shares], 9, :)
